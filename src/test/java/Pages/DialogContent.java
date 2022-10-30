@@ -14,6 +14,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Samsung']")
     private WebElement successMessage;
     @FindBy(xpath = "//*[@href='#delete-bold']")
+            private WebElement cookie;
 
 
     WebElement myElement;
@@ -28,6 +29,7 @@ public class DialogContent extends Parent {
 
     public void findAndClick (String strElement){
         switch (strElement){
+            case "cookie":myElement=cookie;break;
 
 
         }

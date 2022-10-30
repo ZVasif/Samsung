@@ -17,4 +17,9 @@ public class Navigate {
     public void getMessage(String arg0) {
         dc.findAndContainsText("successMessage","Samsung");
     }
+
+    @Then("Close cookie")
+    public void closeCookie() {
+        dc.findAndClick("cookie");
+    }
 }

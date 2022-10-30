@@ -4,3 +4,4 @@ Feature: Samsung web
 
     Given Navigate to Samsung
     When Get message "Samsung"
+    Then Close cookie
