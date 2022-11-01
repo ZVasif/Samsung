@@ -12,9 +12,21 @@ public class DialogContent extends Parent {
     }
 
     @FindBy(xpath = "//span[text()='Samsung']")
-    private WebElement successMessage;
+    private WebElement messageSamsung;
     @FindBy(xpath = "//*[@href='#delete-bold']")
             private WebElement cookie;
+    @FindBy(xpath = "//span[text()='Ekranlar']")
+            private WebElement ekranlar;
+    @FindBy(xpath = "//a[@data-engname='screens:monitors']")
+            private WebElement monitor;
+    @FindBy(css = "[an-la=\"screens:monitors:discover monitors\"] span")
+            private WebElement mKesfedin;
+    @FindBy(xpath = "(//div[contains(@class,'image--main-loaded')]/img)[10]")
+    private WebElement ultraGenis;
+    @FindBy(xpath = "(//*[@class='product-card-v2__cta']/a)[2]")
+            private WebElement monitor2;
+    @FindBy(className = "pd-option-selector__main-text")
+            private WebElement message34;
 
 
     WebElement myElement;
@@ -30,6 +42,11 @@ public class DialogContent extends Parent {
     public void findAndClick (String strElement){
         switch (strElement){
             case "cookie":myElement=cookie;break;
+            case "ekranlar":myElement=ekranlar;break;
+            case "monitor":myElement=monitor;break;
+            case "mKesfedin":myElement=mKesfedin;break;
+            case "ultraGenis":myElement=ultraGenis;break;
+            case "monitor2":myElement=monitor2;break;
 
 
         }
@@ -38,7 +55,8 @@ public class DialogContent extends Parent {
 
     public void findAndContainsText (String strElement,String text){
         switch (strElement){
-            case "successMessage":myElement=successMessage;break;
+            case "messageSamsung":myElement=messageSamsung;break;
+            case "message34":myElement=message34;break;
 
 
         }
