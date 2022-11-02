@@ -38,10 +38,8 @@ public class Navigate  {
 
     @And("Click on the Monitör and Monitörleri Keşfedin")
     public void clickOnTheMonitörAndMonitörleriKeşfedin() {
-        dc.findAndClick("monitor");
-        WebElement mKesfedin=GWD.getDriver().findElement(By.cssSelector("[an-la=\"screens:monitors:discover monitors\"] span"));
-        Action action=actions.moveToElement(mKesfedin).click().build();
-        action.perform();
+        dc.actAndClick("monitor");
+        dc.actAndClick("mKesfedin");
     }
 
     @Then("Click on the monitor Ultra Genis")
@@ -54,9 +52,7 @@ public class Navigate  {
 
     @And("Click on the second monitor")
     public void clickOnTheSecondMonitor() {
-        WebElement monitor2=GWD.getDriver().findElement(By.xpath("(//*[@class='product-card-v2__cta']/a)[2]"));
-        Action action=actions.moveToElement(monitor2).click().build();
-        action.perform();
+       dc.actAndClick("monitor2");
     }
 
     @And("Get successfully message")

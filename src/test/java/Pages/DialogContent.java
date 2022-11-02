@@ -46,7 +46,7 @@ public class DialogContent extends Parent {
             case "monitor":myElement=monitor;break;
             case "mKesfedin":myElement=mKesfedin;break;
             case "ultraGenis":myElement=ultraGenis;break;
-            case "monitor2":myElement=monitor2;break;
+
 
 
         }
@@ -65,5 +65,14 @@ public class DialogContent extends Parent {
 
     public void SearchAndDelete(String searchText){
 
+    }
+
+    public void actAndClick (String strElement){
+        switch (strElement){
+            case "monitor":myElement=monitor;break;
+            case "mKesfedin":myElement = mKesfedin;break;
+            case "monitor2":myElement = monitor2;break;
+        }
+        actionFunction(myElement);
     }
 }
