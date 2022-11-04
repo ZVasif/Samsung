@@ -12,15 +12,26 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class GWD {
 
     public static WebDriver driver;
 
-    private static  ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>();
-    public static  ThreadLocal<String> threadBrowserName=new ThreadLocal<>();
+    private static  ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>(); //WebDriver 1 WebDriver2
+    public static  ThreadLocal<String> threadBrowserName=new ThreadLocal<>(); // chrome , firefox ...
+
+
+
+
 
     public static WebDriver getDriver()
     {
+        //Bana neler lazım
+        //1 Browser tipi lazım burada ona göre oluşturcam
+        // her bir paralel çalışan sürec için sadece o sürece özel static bir değişken lazım
+        // çünkü runner classdaki işaret edilen tüm senaryolarda aynısını çalışması lazım
+        // demekki her pipeline için (Local) ve de ona özel static bir drivera ihtiyacım var
+        //donanımdaki adı pipeline , yazılımdaki adı Thread , paralel çalışan her bir süreç
 
         Locale.setDefault( new Locale("EN"));
         System.setProperty("user.language","EN");
@@ -28,13 +39,13 @@ public class GWD {
         Logger.getLogger("").setLevel(Level.SEVERE);
         System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 
-        if (threadBrowserName.get() == null)
-            threadBrowserName.set("chrome");
+        if (threadBrowserName.get() == null) // paralel çalışmayan yani XML den parametreyle gelmeyen ler çağıran
+            threadBrowserName.set("chrome"); // basic arayanlar için
 
 
         if (threadDriver.get() == null) {
 
-            String browserName=threadBrowserName.get();
+            String browserName=threadBrowserName.get(); // bu thread deki browserName yi verdi
             switch (browserName)
             {
                 case "chrome":
@@ -70,12 +81,12 @@ public class GWD {
 //            throw new RuntimeException(e);
 //        }
 
-        if (threadDriver.get() != null) {
+        if (threadDriver.get() != null) { // driver varsa
             threadDriver.get().quit();
 
             WebDriver driver=threadDriver.get();
             driver=null;
-            threadDriver.set(driver);
+            threadDriver.set(driver); // tekrar gelirse için boş olmuş olsun
         }
     }
 

@@ -55,12 +55,11 @@ public class Parent {
         WebDriverWait wait=new WebDriverWait(GWD.driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
     }
-
     public void actionFunction(WebElement element){
         Actions actions=new Actions(GWD.getDriver());
         Action action=actions.moveToElement(element).click().build();
         action.perform();
-    }
 
+    }
 
 }
