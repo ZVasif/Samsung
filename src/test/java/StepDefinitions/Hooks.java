@@ -15,19 +15,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Hooks {
-
     @Before
     public void before()
     {
-        System.out.println(" The scenario started");
+        System.out.println("Scenario started");
     }
 
     @After
     public void after(Scenario scenario)
     {
-        System.out.println("The scenario is over");
+        System.out.println("Scenario Done");
         System.out.println("scenario result="+ scenario.getStatus());
-        System.out.println("scenario isFailed ?="+ scenario.isFailed());
+        System.out.println("scenario is Failed ?="+ scenario.isFailed());
 
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
@@ -50,6 +49,7 @@ public class Hooks {
 
         }
 
+        // ekran görüntüsü al senaryo hatalı ise
         GWD.quitDriver();
     }
 
