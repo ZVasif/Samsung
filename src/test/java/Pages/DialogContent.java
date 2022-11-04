@@ -37,7 +37,7 @@ public class DialogContent extends Parent {
     private WebElement WD90SatinAl;
     @FindBy (xpath = "(//button[@class='btn btn-block pz-button__add-to-cart js-add-to-cart data-omni-addtocart btn-add-to-cart active pz-button__action'])[2]")
     private WebElement SepeteEkle;
-    @FindBy(className = "btn pz-btn btn-block btn-primary data-omni-cartview")
+    @FindBy(css = "btn pz-btn btn-block btn-primary data-omni-cartview")
     private WebElement SepeteGit;
     @FindBy (css="[data-omni='cart:proceed to checkout']")
     private WebElement SepetiOnayla;
