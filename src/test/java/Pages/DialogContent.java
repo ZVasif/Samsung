@@ -28,6 +28,7 @@ public class DialogContent extends Parent {
     @FindBy(className = "pd-option-selector__main-text")
             private WebElement message34;
 
+    //**************************  Smart Things  **************************//
     @FindBy(xpath = "(//span[text()='SmartThings'])[1]")
             private WebElement smartThingsTitle;
     @FindBy(xpath = "(//div[2]/ul/li[3]/a/span)[7]")
@@ -45,12 +46,40 @@ public class DialogContent extends Parent {
     @FindBy(xpath = " //h1[text()='SmartThings']")
             private WebElement verifyAppStore;
 
+    //**************************  Aksesuarlar  **************************//
 
+    @FindBy(xpath = "//*[text()='Aksesuarlar']")
+    private WebElement aksesuarlar;
+    @FindBy(xpath = "//div[@class='sr03-acc-pcd-search__inner']/button")
+    private WebElement searchBox;
+    @FindBy(xpath = "//div[@class='sr03-acc-pcd-search__input-field']/input")
+    private WebElement sendProduct;
+    @FindBy(xpath = "//*[@data-modelname=\"ef-bx900\"]")
+    private WebElement tab8;
+    @FindBy(xpath = "//*[text()='SATIN AL']")
+    private WebElement buy;
+    @FindBy(xpath = "(//*[contains(text(),' SEPETE EKLE')])[2]")
+    private WebElement addTo;
+    @FindBy(xpath = "(//*[contains(text(),'Git')])[2]")
+    private WebElement goTo;
+    @FindBy(xpath = "(//*[@class='icon-bin'])[2]")
+    private WebElement delete;
+    @FindBy(css = "[class='mb-2']")
+    private WebElement messageEmpty;
+    @FindBy(css = "[class='mb-2']")
+    private WebElement xxx;
+    @FindBy(css = "[class='mb-2']")
+    private WebElement yyy;
+    @FindBy(css = "[class='mb-2']")
+    private WebElement zzz;
+
+    //**************************          **************************//
 
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
         switch (strElement) {
+            case "sendProduct":myElement=sendProduct;break;
 
 
         }
@@ -66,6 +95,13 @@ public class DialogContent extends Parent {
             case "ultraGenis":myElement=ultraGenis;break;
             case "gPlayStore":myElement=gPlayStore;break;
             case "aAppStore":myElement=aAppStore;break;
+            case "aksesuarlar":myElement=aksesuarlar;break;
+            case "searchBox":myElement=searchBox;break;
+            case "tab8":myElement=tab8;break;
+            case "buy":myElement=buy;break;
+            case "addTo":myElement=addTo;break;
+            case "goTo":myElement=goTo;break;
+            case "delete":myElement=delete;break;
 
 
 
@@ -81,6 +117,7 @@ public class DialogContent extends Parent {
             case "message34":myElement=message34;break;
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
+           //case "messageEmpty":myElement=messageEmpty;break;
 
 
 

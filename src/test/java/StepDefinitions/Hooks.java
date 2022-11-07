@@ -37,7 +37,7 @@ public class Hooks {
             File ekranDosyasi = screenshot.getScreenshotAs(OutputType.FILE);
 
 
-            ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
+            //ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
 
             try {
                 FileUtils.copyFile(ekranDosyasi,
