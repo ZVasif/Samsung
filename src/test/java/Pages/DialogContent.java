@@ -28,6 +28,23 @@ public class DialogContent extends Parent {
     @FindBy(className = "pd-option-selector__main-text")
             private WebElement message34;
 
+    @FindBy(xpath = "(//span[text()='SmartThings'])[1]")
+            private WebElement smartThingsTitle;
+    @FindBy(xpath = "(//div[2]/ul/li[3]/a/span)[7]")
+            private WebElement appsAndProductsTitle;
+
+    @FindBy(xpath = "//div[2]/div[@class='st-feature-benefit__cta-wrap']/a[1]")
+            private WebElement gPlayStore;
+
+    @FindBy(xpath = "//span[text()='SmartThings']")
+            private WebElement verifyPlayStore;
+
+    @FindBy(xpath = "//div[2]/div[@class='st-feature-benefit__cta-wrap']/a[2]")
+            private WebElement aAppStore;
+
+    @FindBy(xpath = " //h1[text()='SmartThings']")
+            private WebElement verifyAppStore;
+
 
 
     WebElement myElement;
@@ -47,6 +64,8 @@ public class DialogContent extends Parent {
             case "monitor":myElement=monitor;break;
             case "mKesfedin":myElement=mKesfedin;break;
             case "ultraGenis":myElement=ultraGenis;break;
+            case "gPlayStore":myElement=gPlayStore;break;
+            case "aAppStore":myElement=aAppStore;break;
 
 
 
@@ -60,6 +79,8 @@ public class DialogContent extends Parent {
         switch (strElement){
             case "messageSamsung":myElement=messageSamsung;break;
             case "message34":myElement=message34;break;
+            case "verifyPlayStore":myElement=verifyPlayStore;break;
+            case "verifyAppStore":myElement=verifyAppStore;break;
 
 
 
@@ -76,6 +97,8 @@ public class DialogContent extends Parent {
             case "monitor":myElement=monitor;break;
             case "mKesfedin":myElement = mKesfedin;break;
             case "monitor2":myElement = monitor2;break;
+            case "smartThingsTitle":myElement = smartThingsTitle;break;
+            case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
 
         }
         actionFunction(myElement);
