@@ -68,10 +68,6 @@ public class DialogContent extends Parent {
     private WebElement messageEmpty;
     @FindBy(xpath = "(//div[contains(@class,'h-100')]/button)[1]")
     private WebElement close;
-    @FindBy(css = "[class='mb-2']")
-    private WebElement yyy;
-    @FindBy(css = "[class='mb-2']")
-    private WebElement zzz;
 
     //**************************          **************************//
 

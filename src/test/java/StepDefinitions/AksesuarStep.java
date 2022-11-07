@@ -64,4 +64,3 @@ public class AksesuarStep {
 }
 
 
-//(//*[contains(@class,'js-empty-basket')])[2]
