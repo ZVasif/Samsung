@@ -68,4 +68,5 @@ public class Navigate  {
     public void getSuccessfullyMessage() {
         dc.findAndContainsText("message34","34");
     }
+
 }
