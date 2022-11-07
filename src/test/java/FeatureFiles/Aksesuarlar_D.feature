@@ -11,13 +11,14 @@ Feature: Story with send keys
     Then Send product name
       | sendProduct | tablet |
     And Click Enter
-    And Seleck TAB ULTRA
+    And Select TAB ULTRA
       | tab8   |
       | buy    |
       | addTo  |
       | goTo   |
       | delete |
-      And Close window
-      | close  |
+    And Close window
+    Then Get successfully Empty message
+
 
 
