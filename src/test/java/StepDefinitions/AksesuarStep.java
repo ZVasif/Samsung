@@ -1,27 +1,23 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import Utilites.GWD;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import io.cucumber.java.en.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.time.Duration;
 import java.util.List;
 
 public class AksesuarStep {
-    DialogContent dc=new DialogContent();
-    WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+    DialogContent dc = new DialogContent();
+    Robot robot = new Robot();
+
+    public AksesuarStep() throws AWTException {
+    }
+
     @And("Click on the element from main menu")
     public void clickOnTheElementFromMainMenu(DataTable elements) {
-        List<String> listElement=elements.asList(String.class);
+        List<String> listElement = elements.asList(String.class);
 
         for (int i = 0; i < listElement.size(); i++) {
             dc.findAndClick(listElement.get(i));
@@ -30,38 +26,41 @@ public class AksesuarStep {
 
     @Then("Send product name")
     public void sendProductName(DataTable elements) {
-        List<List<String >>listElement=elements.asLists(String.class);
+        List<List<String>> listElement = elements.asLists(String.class);
 
         for (int i = 0; i < listElement.size(); i++) {
-            dc.findAndSend(listElement.get(i).get(0),listElement.get(i).get(1));
+            dc.findAndSend(listElement.get(i).get(0), listElement.get(i).get(1));
 
         }
     }
 
     @And("Click Enter")
-    public void clickEnter() throws AWTException {
-        Robot robot=new Robot();
+    public void clickEnter() {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
 
     }
 
-    @And("Seleck TAB ULTRA")
-    public void seleckTABULTRA(DataTable elements) {
-        List<String> listElement=elements.asList(String.class);
+    @And("Select TAB ULTRA")
+    public void selectTABULTRA(DataTable elements) {
+        List<String> listElement = elements.asList(String.class);
 
         for (int i = 0; i < listElement.size(); i++) {
             dc.findAndClick(listElement.get(i));
         }
-        //GWD.Bekle(5);
     }
 
+
     @And("Close window")
-    public void closeWindow() {
-        //GWD.Bekle(5);
-       //dc.actionAndClick("close");
+    public void closeWindow(){
+        robot.mouseMove(20,0);
+    }
+
+    @Then("Get successfully Empty message")
+    public void getSuccessfullyEmptyMessage() {
+        dc.findAndContainsText("messageEmpty","Boş");
+
     }
 }
 
 
-//(//*[contains(@class,'js-empty-basket')])[2]

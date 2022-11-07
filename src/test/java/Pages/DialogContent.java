@@ -64,14 +64,10 @@ public class DialogContent extends Parent {
     private WebElement goTo;
     @FindBy(xpath = "(//*[@class='icon-bin'])[2]")
     private WebElement delete;
-    @FindBy(css = "[class='mb-2']")
+    @FindBy(xpath = "//*[contains(@class,'line-height-1')]")
     private WebElement messageEmpty;
-    @FindBy(css = "[class='mb-2']")
-    private WebElement xxx;
-    @FindBy(css = "[class='mb-2']")
-    private WebElement yyy;
-    @FindBy(css = "[class='mb-2']")
-    private WebElement zzz;
+    @FindBy(xpath = "(//div[contains(@class,'h-100')]/button)[1]")
+    private WebElement close;
 
     //**************************          **************************//
 
@@ -102,6 +98,7 @@ public class DialogContent extends Parent {
             case "addTo":myElement=addTo;break;
             case "goTo":myElement=goTo;break;
             case "delete":myElement=delete;break;
+            case "close":myElement=close;break;
 
 
 
@@ -117,7 +114,7 @@ public class DialogContent extends Parent {
             case "message34":myElement=message34;break;
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
-           //case "messageEmpty":myElement=messageEmpty;break;
+            case "messageEmpty":myElement=messageEmpty;break;
 
 
 
