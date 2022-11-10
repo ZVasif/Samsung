@@ -71,6 +71,32 @@ public class DialogContent extends Parent {
 
     //**************************          **************************//
 
+    @FindBy(xpath = "(//a[text()='Destek'])[2]")
+    private WebElement destekBtn;
+
+    @FindBy(xpath = "(//a[@aria-label='DAHA FAZLA BİLGİ EDİN'])[1]")
+    private WebElement garantiDahaFazlaBtn;
+
+    @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[1]")
+    private WebElement mobilCihazBtn;
+
+    @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[2]")
+    private WebElement tvVeAydinlatmaBtn;
+
+    @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[3]")
+    private WebElement beyazEsyaBtn;
+
+    @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[4]")
+    private WebElement bilgisayarVeOfisBtn;
+
+    @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[5]")
+    private WebElement kameraVeVideoKameraBtn;
+
+    @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[6]")
+    private WebElement depolamaBtn;
+
+
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
@@ -99,6 +125,14 @@ public class DialogContent extends Parent {
             case "goTo":myElement=goTo;break;
             case "delete":myElement=delete;break;
             case "close":myElement=close;break;
+            case "destekBtn":myElement=destekBtn;break;
+            case "garantiDahaFazlaBtn":myElement=garantiDahaFazlaBtn;break;
+            case "mobilCihazBtn":myElement=mobilCihazBtn;break;
+            case "tvVeAydinlatmaBtn":myElement=tvVeAydinlatmaBtn;break;
+            case "beyazEsyaBtn":myElement=beyazEsyaBtn;break;
+            case "bilgisayarVeOfisBtn":myElement=bilgisayarVeOfisBtn;break;
+            case "kameraVeVideoKameraBtn":myElement=kameraVeVideoKameraBtn;break;
+            case "depolamaBtn":myElement=depolamaBtn;break;
 
 
 
@@ -136,5 +170,13 @@ public class DialogContent extends Parent {
 
         }
         actionFunction(myElement);
+    }
+
+    public WebElement getMyElement(String strElement) {
+        switch (strElement){
+            case "garantiDahaFazlaBtn":myElement=garantiDahaFazlaBtn;break;
+
+        }
+        return myElement;
     }
 }
