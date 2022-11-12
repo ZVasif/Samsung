@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilites.GWD;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -70,6 +71,34 @@ public class DialogContent extends Parent {
     private WebElement close;
 
     //**************************          **************************//
+    //----------------------ORCUN112--------------------------------//
+
+    @FindBy(css = "iframe[name='spr-chat__proactive-frame']")
+    public WebElement frame;
+
+    @FindBy(css = "div>p[style^='margin']")
+    public WebElement helpcentervisibil;
+
+    @FindBy(xpath = "//div[text()='Destek']")
+            public WebElement clickDestek;
+
+
+    @FindBy(css = "div>h2[class$='ehk9cno8']")
+            public WebElement assert1;
+
+///***************Scenario 2*****************//
+
+    @FindBy(xpath = "(//*[@class='footer-category__item'])[19]")
+    public WebElement WhatsAppSupport;
+
+    @FindBy(css = "[class='_9vcv _advm _9scb']")
+            public WebElement clickinwhatsappicon;
+
+    @FindBy(xpath = "//span[text()='use WhatsApp Web']")
+            public WebElement clickusetheWebWhatsApp;
+
+    @FindBy(xpath = "//div[text()='To use WhatsApp on your computer:']")
+            public WebElement verify1;
 
     WebElement myElement;
 
@@ -99,6 +128,16 @@ public class DialogContent extends Parent {
             case "goTo":myElement=goTo;break;
             case "delete":myElement=delete;break;
             case "close":myElement=close;break;
+            //------------orcun112-----------------
+            case "helpcentervisibil":myElement=helpcentervisibil;break;
+            case "clickDestek":myElement=clickDestek;break;
+            case "WhatsAppSupport":myElement=WhatsAppSupport;break;
+            case "clickinwhatsappicon":myElement=clickinwhatsappicon;break;
+            case "clickusetheWebWhatsApp":myElement=clickusetheWebWhatsApp;break;
+//            case "clickDestek1":myElement=clickDestek1;break;
+
+
+
 
 
 
@@ -115,6 +154,8 @@ public class DialogContent extends Parent {
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
             case "messageEmpty":myElement=messageEmpty;break;
+            case "assert1":myElement=assert1;break;
+            case "verify1":myElement=verify1;break;
 
 
 
@@ -133,8 +174,17 @@ public class DialogContent extends Parent {
             case "monitor2":myElement = monitor2;break;
             case "smartThingsTitle":myElement = smartThingsTitle;break;
             case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
+//            case "clickDestek1":myElement=clickDestek1;break;
 
         }
         actionFunction(myElement);
+    }
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
+                + "var elementTop = arguments[0].getBoundingClientRect().top;"
+                + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+
+        js.executeScript(scrollElementIntoMiddle, element);
     }
 }
