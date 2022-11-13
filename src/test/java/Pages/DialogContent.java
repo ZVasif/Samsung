@@ -70,59 +70,58 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div[contains(@class,'h-100')]/button)[1]")
     private WebElement close;
 
-    //**************************          **************************//
+    //**************************  Kavisli Monitor  **************************//
 
-    //**************************          **************************//
-    //----------------------ORCUN112--------------------------------//
+    @FindBy(xpath = "//*[contains(text(),'Kavisli Monitör')]")
+    private WebElement zbeklev;
+    @FindBy(xpath = "//*[contains(text(),'Kavisli Monitör')]")
+    private WebElement kavisli;
+    @FindBy(xpath = "//*[@for=\"checkbox-series04o04\"]")
+    private WebElement inc;
+    @FindBy(xpath = "//*[contains(text(),'Odyssey G3 27” 1')]")
+    private WebElement odessey;
+    @FindBy(xpath = "(//*[@class='pd-option-selector__main-text'])[2]")
+    private WebElement message27;
+    @FindBy(css = "[aria-label=\"Destek\"]")
+    private WebElement destek;
+    @FindBy(xpath = "//*[@class='cta-wrap']/a")
+    private WebElement desteyeGit;
+    @FindBy(css = "[class='support-product-hero__product-name']")
+    private WebElement messageOdessey;
+    //************************** The Live Chat  **************************//
 
     @FindBy(css = "iframe[name='spr-chat__proactive-frame']")
     public WebElement frame;
-
     @FindBy(css = "div>p[style^='margin']")
     public WebElement helpcentervisibil;
-
     @FindBy(xpath = "//div[text()='Destek']")
     public WebElement clickDestek;
-
-
     @FindBy(css = "div>h2[class$='ehk9cno8']")
     public WebElement assert1;
-
-///***************Scenario 2*****************//
-
     @FindBy(xpath = "(//*[@class='footer-category__item'])[19]")
     public WebElement WhatsAppSupport;
-
     @FindBy(css = "[class='_9vcv _advm _9scb']")
     public WebElement clickinwhatsappicon;
-
     @FindBy(xpath = "//span[text()='use WhatsApp Web']")
     public WebElement clickusetheWebWhatsApp;
-
     @FindBy(xpath = "//div[text()='To use WhatsApp on your computer:']")
     public WebElement verify1;
 
+    //***************  Warranty Period  *****************//
     @FindBy(xpath = "(//a[text()='Destek'])[2]")
     private WebElement destekBtn;
-
     @FindBy(xpath = "(//a[@aria-label='DAHA FAZLA BİLGİ EDİN'])[1]")
     private WebElement garantiDahaFazlaBtn;
-
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[1]")
     private WebElement mobilCihazBtn;
-
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[2]")
     private WebElement tvVeAydinlatmaBtn;
-
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[3]")
     private WebElement beyazEsyaBtn;
-
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[4]")
     private WebElement bilgisayarVeOfisBtn;
-
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[5]")
     private WebElement kameraVeVideoKameraBtn;
-
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[6]")
     private WebElement depolamaBtn;
 
@@ -187,7 +186,8 @@ public class DialogContent extends Parent {
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
             case "messageEmpty":myElement=messageEmpty;break;
-            //***************orcun112*******************//
+            case "message27":myElement=message27;break;
+            case "messageOdessey":myElement=messageOdessey;break;
             case "assert1":myElement=assert1;break;
             case "verify1":myElement=verify1;break;
 
@@ -208,7 +208,10 @@ public class DialogContent extends Parent {
             case "monitor2":myElement = monitor2;break;
             case "smartThingsTitle":myElement = smartThingsTitle;break;
             case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
-
+            case "kavisli":myElement=kavisli;break;
+            case "inc":myElement=inc;break;
+            case "odessey":myElement=odessey;break;
+            case "desteyeGit":myElement=desteyeGit;break;
         }
         actionFunction(myElement);
     }
