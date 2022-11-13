@@ -19,6 +19,7 @@ public class CheckLiveChat extends Parent {
     DialogContent dc = new DialogContent();
 
 
+
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
 
     @And("Click the live chat in order to type on something and click and send message")

@@ -7,7 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +18,6 @@ import java.util.logging.Logger;
 public class GWD {
 
     public static WebDriver driver;
-
     private static  ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>(); //WebDriver 1 WebDriver2
     public static  ThreadLocal<String> threadBrowserName=new ThreadLocal<>(); // chrome , firefox ...
 
