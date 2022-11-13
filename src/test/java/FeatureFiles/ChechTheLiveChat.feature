@@ -1,6 +1,7 @@
 
 Feature:Check the Live Chat
 
+
   Scenario: Check the Lİve Chat properly
     When Navigate to Samsung
     Given Get successfully message Samsung

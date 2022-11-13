@@ -127,7 +127,6 @@ public class DialogContent extends Parent {
     private WebElement depolamaBtn;
 
 
-
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
