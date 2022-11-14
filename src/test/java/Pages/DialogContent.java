@@ -125,7 +125,16 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[6]")
     private WebElement depolamaBtn;
 
+    //**************************  Hafıza Depolama  **************************//
+    @FindBy(xpath="//*[text()='Hafıza / Depolama']")
+    private WebElement hafizaDepolama;
 
+    @FindBy(xpath="//a[@an-la='memory storage:see all']")
+    private WebElement hafizaDepolamaTumunuGor;
+
+    @FindBy(xpath="//input[@an-la='filter:type:memory-card']")
+    private WebElement filterMemoryCard;
+    //***********************************************************************//
 
     WebElement myElement;
 
@@ -170,6 +179,10 @@ public class DialogContent extends Parent {
             case "clickinwhatsappicon":myElement=clickinwhatsappicon;break;
             case "clickusetheWebWhatsApp":myElement=clickusetheWebWhatsApp;break;
 
+            //------------Erkan-----------------
+            case "hafizaDepolama":myElement=hafizaDepolama;break;
+            case "hafizaDepolamaTumunuGor":myElement=hafizaDepolamaTumunuGor;break;
+            case "filterMemoryCard":myElement=filterMemoryCard;break;
 
 
 
