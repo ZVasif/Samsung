@@ -41,7 +41,6 @@ public class CheckLiveChat extends Parent {
         System.out.println("The test passed");
         GWD.getDriver().switchTo().defaultContent();
 
-
     }
 
     @And("Check the Whats App Support Icon")
