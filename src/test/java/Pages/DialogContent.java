@@ -89,7 +89,7 @@ public class DialogContent extends Parent {
     @FindBy(css = "[class='support-product-hero__product-name']")
     private WebElement messageOdessey;
 
-    //************************** The Live Chat  ************************//
+    //************************** The Live Chat  ***********************//
 
     @FindBy(css = "iframe[name='spr-chat__proactive-frame']")
     public WebElement frame;
