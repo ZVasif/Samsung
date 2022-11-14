@@ -108,8 +108,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[text()='To use WhatsApp on your computer:']")
     public WebElement verify1;
 
+    //***************  Warranty Period   *****************//
 
-    //***************  Warranty Period  *****************//
     @FindBy(xpath = "(//a[text()='Destek'])[2]")
     private WebElement destekBtn;
     @FindBy(xpath = "(//a[@aria-label='DAHA FAZLA BİLGİ EDİN'])[1]")
