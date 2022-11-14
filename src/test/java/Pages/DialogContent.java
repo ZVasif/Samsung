@@ -109,6 +109,7 @@ public class DialogContent extends Parent {
     public WebElement verify1;
 
     //***************  Warranty Period   *****************//
+
     @FindBy(xpath = "(//a[text()='Destek'])[2]")
     private WebElement destekBtn;
     @FindBy(xpath = "(//a[@aria-label='DAHA FAZLA BİLGİ EDİN'])[1]")
