@@ -125,15 +125,37 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[6]")
     private WebElement depolamaBtn;
 
+    //************************** Galaxy Z fold **************************//
+
+    @FindBy(xpath = "//span[text()='Mobil']")
+    private WebElement mobilButton;
+
+    @FindBy(xpath = "/html/body/div[1]/div[4]/div/div/div[3]/div/div[1]/div/div/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div[6]/a[text()='Satın Al']")
+    public WebElement buyzfold;
+
+    @FindBy(xpath = "/html/body/div[4]/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/button")
+    public WebElement addBasket;
+
+    @FindBy(xpath = "//*[@id=\"main-content\"]/div/div[1]/div[4]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div/div[1]/label")
+    public WebElement color;
+
+
+    @FindBy(xpath = "//*[@id=\"main-content\"]/div/div[1]/div[4]/div/div[2]/div/div[3]/div/div[2]/div/button")
+    public WebElement cartbutton;
+
+    @FindBy(xpath = "/html/body/div[4]/header/div[1]/section/div[3]/nav[2]/div[4]/div[1]/a/i")
+    public WebElement cartbutton2;
+
+    @FindBy(xpath = "(//*[@class='icon-bin'])[2]")
+    public WebElement deletePhone;
+
 
 
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
-        switch (strElement) {
-            case "sendProduct":myElement=sendProduct;break;
-
-
+        if ("sendProduct".equals(strElement)) {
+            myElement = sendProduct;
         }
         sendKeysFunction(myElement,value);
     }
@@ -169,7 +191,11 @@ public class DialogContent extends Parent {
             case "WhatsAppSupport":myElement=WhatsAppSupport;break;
             case "clickinwhatsappicon":myElement=clickinwhatsappicon;break;
             case "clickusetheWebWhatsApp":myElement=clickusetheWebWhatsApp;break;
-
+//************************MAhmut*********************************
+            case "mobilButton":myElement=mobilButton;break;
+            case "buyzfold":myElement=buyzfold;break;
+            case "addBasket":myElement=addBasket;break;
+            case "deletePhone":myElement=deletePhone;break;
 
 
 
@@ -217,9 +243,8 @@ public class DialogContent extends Parent {
     }
 
     public WebElement getMyElement(String strElement) {
-        switch (strElement){
-            case "garantiDahaFazlaBtn":myElement=garantiDahaFazlaBtn;break;
-
+        if ("garantiDahaFazlaBtn".equals(strElement)) {
+            myElement = garantiDahaFazlaBtn;
         }
         return myElement;
     }
