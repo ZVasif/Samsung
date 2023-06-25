@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -34,15 +35,11 @@ public class Navigate  {
         dc.findAndClick("cookie");
     }
 
-    @And("Click on the Ekranlar from main menu")
-    public void clickOnTheEkranlarFromMainMenu() {
-        dc.findAndClick("ekranlar");
-    }
-
-    @And("Click on the Monitör and Monitörleri Keşfedin")
-    public void clickOnTheMonitörAndMonitörleriKeşfedin() {
-        dc.actionAndClick("monitor");
+    @And("Action to the IT from main menu and click on the Monitörleri Keşfedin")
+    public void actionToTheITFromMainMenuAndClickOnTheMonitörleriKeşfedin() {
+        dc.actionAndClick("IT");
         dc.actionAndClick("mKesfedin");
+
     }
 
     @Then("Click on the monitor Ultra Genis")

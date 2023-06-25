@@ -5,8 +5,7 @@ Feature: Samsung web
     Given Navigate to Samsung
     When Get successfully message Samsung
     Then Close cookie window
-    And Click on the Ekranlar from main menu
-    And Click on the Monitör and Monitörleri Keşfedin
+    And Action to the IT from main menu and click on the Monitörleri Keşfedin
     Then Click on the monitor Ultra Genis
     And Click on the second monitor
     And Get successfully message

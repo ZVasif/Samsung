@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
+import Utilites.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 
@@ -9,12 +10,18 @@ import java.util.List;
 public class HafizaDepolamaSteps {
 
     DialogContent dc = new DialogContent();
-    @And("Click on the element from Filter Type")
-    public void clickOnTheElementFromFilterType(DataTable elements) {
-        List<String> listElement = elements.asList(String.class);
 
-        for (int i = 0; i < listElement.size(); i++) {
-            dc.findAndClick(listElement.get(i));
-        }
+    @And("Action to the IT from main menu and click on the Tumunu Gor")
+    public void actionToTheITFromMainMenuAndClickOnTheTumunuGor() {
+        dc.actionAndClick("IT");
+        dc.findAndClick("hafizaDepolamaTumunuGor");
+        dc.findAndClick("filterMemoryCard");
+    }
+
+    @And("Select SSD from Tip and {int}TB from Kapasite")
+    public void selectSSDFromTipAndTBFromKapasite(int arg0) {
+        GWD.Bekle(5);
+        dc.actionAndClick("SSD");
+        //dc.findAndClick("TB2");
     }
 }

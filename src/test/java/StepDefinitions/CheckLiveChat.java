@@ -14,7 +14,7 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.Set;
 
-public class CheckLiveChat extends Parent {
+public class CheckLiveChat {
 
     DialogContent dc = new DialogContent();
 
@@ -72,3 +72,11 @@ public class CheckLiveChat extends Parent {
     }
 
 }
+
+/**Check the Live Chat
+ io: Check the Lİve Chat properly
+ n Navigate to Samsung
+ Get successfully message Samsung
+ Close cookie window
+ Click the live chat in order to type on something and click and send message
+ Check the Whats App Support Icon**/

@@ -11,20 +11,20 @@ public class DialogContent extends Parent {
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
-
+    //************************** Common locators **************************//
     @FindBy(xpath = "//span[text()='Samsung']")
     private WebElement messageSamsung;
     @FindBy(xpath = "//*[@href='#delete-bold']")
-            private WebElement cookie;
-    @FindBy(xpath = "//span[text()='Ekranlar']")
-            private WebElement ekranlar;
-    @FindBy(xpath = "//a[@data-engname='screens:monitors']")
-            private WebElement monitor;
-    @FindBy(css = "[an-la=\"screens:monitors:discover monitors\"] span")
+    private WebElement cookie;
+
+    //**************************  Navigate  **************************//
+    @FindBy(xpath = "//*[@data-index=\"4\"]")
+            private WebElement IT;
+    @FindBy(xpath = "//*[@an-la=\"it:monitors:discover monitors\"]")
             private WebElement mKesfedin;
-    @FindBy(xpath = "(//div[contains(@class,'image--main-loaded')]/img)[10]")
+    @FindBy(xpath = "(//div[contains(@class,'product-name-text-inner')]/span)[9]")
     private WebElement ultraGenis;
-    @FindBy(xpath = "//*[@data-modelname=\"C34G55TWWR\"]")
+    @FindBy(xpath = "//*[contains(@aria-label,'Odyssey G5 34')]")
             private WebElement monitor2;
     @FindBy(className = "pd-option-selector__main-text")
             private WebElement message34;
@@ -48,8 +48,7 @@ public class DialogContent extends Parent {
             private WebElement verifyAppStore;
 
     //**************************  Aksesuarlar  **************************//
-
-    @FindBy(xpath = "//*[text()='Aksesuarlar']")
+    @FindBy(xpath = "(//*[contains(text(),'Aksesuarlar')])[4]")
     private WebElement aksesuarlar;
     @FindBy(xpath = "//div[@class='sr03-acc-pcd-search__inner']/button")
     private WebElement searchBox;
@@ -126,22 +125,22 @@ public class DialogContent extends Parent {
     private WebElement depolamaBtn;
 
     //**************************  Hafıza Depolama  **************************//
-    @FindBy(xpath="//*[text()='Hafıza / Depolama']")
-    private WebElement hafizaDepolama;
-
-    @FindBy(xpath="//a[@an-la='memory storage:see all']")
+//    @FindBy(xpath="//*[text()='Hafıza / Depolama']")
+//    private WebElement hafizaDepolama;
+    @FindBy(xpath="//*[contains(@an-la,'see all')]")
     private WebElement hafizaDepolamaTumunuGor;
-
-    @FindBy(xpath="//input[@an-la='filter:type:memory-card']")
-    private WebElement filterMemoryCard;
+    @FindBy(xpath="((//*[text()='SSD'])[3]")
+    private WebElement SSD;
+    @FindBy(xpath = "//*[text()='2 TB ~']")
+            private WebElement TB2;
     //***********************************************************************//
 
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
         switch (strElement) {
+            //**************************  Aksesuarlar  **************************//
             case "sendProduct":myElement=sendProduct;break;
-
 
         }
         sendKeysFunction(myElement,value);
@@ -149,13 +148,11 @@ public class DialogContent extends Parent {
 
     public void findAndClick (String strElement){
         switch (strElement){
+            //**************************  Common  **************************//
             case "cookie":myElement=cookie;break;
-            case "ekranlar":myElement=ekranlar;break;
-            case "monitor":myElement=monitor;break;
-            case "mKesfedin":myElement=mKesfedin;break;
+            //**************************  Navigate  **************************//
             case "ultraGenis":myElement=ultraGenis;break;
-            case "gPlayStore":myElement=gPlayStore;break;
-            case "aAppStore":myElement=aAppStore;break;
+            //**************************  Aksesuarlar  **************************//
             case "aksesuarlar":myElement=aksesuarlar;break;
             case "searchBox":myElement=searchBox;break;
             case "tab8":myElement=tab8;break;
@@ -163,6 +160,9 @@ public class DialogContent extends Parent {
             case "addTo":myElement=addTo;break;
             case "goTo":myElement=goTo;break;
             case "delete":myElement=delete;break;
+
+            case "gPlayStore":myElement=gPlayStore;break;
+            case "aAppStore":myElement=aAppStore;break;
             case "close":myElement=close;break;
             case "destekBtn":myElement=destekBtn;break;
             case "garantiDahaFazlaBtn":myElement=garantiDahaFazlaBtn;break;
@@ -179,13 +179,11 @@ public class DialogContent extends Parent {
             case "clickinwhatsappicon":myElement=clickinwhatsappicon;break;
             case "clickusetheWebWhatsApp":myElement=clickusetheWebWhatsApp;break;
 
-            //------------Erkan-----------------
-            case "hafizaDepolama":myElement=hafizaDepolama;break;
+            //------------HafizaDepolama-----------------
+            //case "hafizaDepolama":myElement=hafizaDepolama;break;
             case "hafizaDepolamaTumunuGor":myElement=hafizaDepolamaTumunuGor;break;
-            case "filterMemoryCard":myElement=filterMemoryCard;break;
-
-
-
+            //case "SSD":myElement=SSD;break;
+            case "TB2":myElement=TB2;break;
 
 
         }
@@ -195,10 +193,13 @@ public class DialogContent extends Parent {
     public void findAndContainsText (String strElement,String text){
         switch (strElement){
             case "messageSamsung":myElement=messageSamsung;break;
+            //**************************  Navigate  **************************//
             case "message34":myElement=message34;break;
+            //**************************  Aksesuarlar  **************************//
+            case "messageEmpty":myElement=messageEmpty;break;
+
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
-            case "messageEmpty":myElement=messageEmpty;break;
             case "message27":myElement=message27;break;
             case "messageOdessey":myElement=messageOdessey;break;
             case "assert1":myElement=assert1;break;
@@ -210,15 +211,15 @@ public class DialogContent extends Parent {
         verifyContainsText(myElement,text);
     }
 
-    public void SearchAndDelete(String searchText){
-
-    }
-
     public void actionAndClick (String strElement){
         switch (strElement){
-            case "monitor":myElement=monitor;break;
+            //**************************  Navigate  **************************//
+            case "IT":myElement=IT;break;
             case "mKesfedin":myElement = mKesfedin;break;
             case "monitor2":myElement = monitor2;break;
+
+            case "SSD":myElement=SSD;break;
+
             case "smartThingsTitle":myElement = smartThingsTitle;break;
             case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
             case "kavisli":myElement=kavisli;break;
