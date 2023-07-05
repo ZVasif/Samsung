@@ -125,14 +125,20 @@ public class DialogContent extends Parent {
     private WebElement depolamaBtn;
 
     //**************************  Hafıza Depolama  **************************//
-//    @FindBy(xpath="//*[text()='Hafıza / Depolama']")
-//    private WebElement hafizaDepolama;
     @FindBy(xpath="//*[contains(@an-la,'see all')]")
-    private WebElement hafizaDepolamaTumunuGor;
-    @FindBy(xpath="((//*[text()='SSD'])[3]")
+    private WebElement TumunuGor;
+    @FindBy(xpath="(//*[text()='SSD'])[3]")
     private WebElement SSD;
     @FindBy(xpath = "//*[text()='2 TB ~']")
             private WebElement TB2;
+    @FindBy(xpath = "(//*[@data-modelname=\"MZ-77Q4T0\"])[6]")
+            private WebElement product;
+    @FindBy(linkText = "NEREDEN ALINIR")
+            private WebElement nereden;
+    @FindBy(xpath = "(//button[@class='layer-popup__close'])[13]")
+            private WebElement close1;
+    @FindBy(xpath = "(//button[@class='layer-popup__close'])[14]")
+    private WebElement close2;
     //***********************************************************************//
 
     WebElement myElement;
@@ -180,10 +186,13 @@ public class DialogContent extends Parent {
             case "clickusetheWebWhatsApp":myElement=clickusetheWebWhatsApp;break;
 
             //------------HafizaDepolama-----------------
-            //case "hafizaDepolama":myElement=hafizaDepolama;break;
-            case "hafizaDepolamaTumunuGor":myElement=hafizaDepolamaTumunuGor;break;
-            //case "SSD":myElement=SSD;break;
+            case "TumunuGor":myElement=TumunuGor;break;
+            case "SSD":myElement=SSD;break;
             case "TB2":myElement=TB2;break;
+            case "product":myElement=product;break;
+            case "nereden":myElement=nereden;break;
+            case "close1":myElement=close1;break;
+            case "close2":myElement=close2;break;
 
 
         }
@@ -218,7 +227,6 @@ public class DialogContent extends Parent {
             case "mKesfedin":myElement = mKesfedin;break;
             case "monitor2":myElement = monitor2;break;
 
-            case "SSD":myElement=SSD;break;
 
             case "smartThingsTitle":myElement = smartThingsTitle;break;
             case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
