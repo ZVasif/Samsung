@@ -23,6 +23,7 @@ public class Kavisli_MonitorStep {
     public void actionToTheITFromMainMenuAndClickOnTheKavisliMonitör() {
         dc.actionAndClick("IT");
         dc.actionAndClick("kavisli");
+        System.out.println();
     }
 
 
@@ -43,7 +44,7 @@ public class Kavisli_MonitorStep {
     @Then("Click on the Destek")
     public void clickOnTheDestek() {
         dc.findAndClick("destek");
-
+        System.out.println();
     }
 
     @And("Go to Desteye Git")
