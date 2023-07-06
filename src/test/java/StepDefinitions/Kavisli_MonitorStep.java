@@ -19,12 +19,12 @@ public class Kavisli_MonitorStep {
     DialogContent dc=new DialogContent();
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
 
-    @And("Click on the Monitör and Kavisli Monitör")
-    public void clickOnTheMonitörAndKavisliMonitör() {
-        dc.actionAndClick("monitor");
+    @And("Action to the IT from main menu and click on the Kavisli Monitör")
+    public void actionToTheITFromMainMenuAndClickOnTheKavisliMonitör() {
+        dc.actionAndClick("IT");
         dc.actionAndClick("kavisli");
-
     }
+
 
     @Then("Choose Ekran Boyutu")
     public void chooseEkranBoyutu() {
@@ -61,4 +61,6 @@ public class Kavisli_MonitorStep {
     public void getSuccessfullyMessageOdessey() {
         dc.findAndContainsText("messageOdessey","Odyssey G3");
     }
+
+
 }
