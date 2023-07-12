@@ -2,29 +2,24 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Utilites.GWD;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.Set;
 
 public class Kavisli_MonitorStep {
     DialogContent dc=new DialogContent();
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
 
-    @And("Click on the Monitör and Kavisli Monitör")
-    public void clickOnTheMonitörAndKavisliMonitör() {
-        dc.actionAndClick("monitor");
+    @And("Action to the IT from main menu and click on the Kavisli Monitör")
+    public void actionToTheITFromMainMenuAndClickOnTheKavisliMonitör() {
+        dc.actionAndClick("IT");
         dc.actionAndClick("kavisli");
-
+        System.out.println();
     }
+
 
     @Then("Choose Ekran Boyutu")
     public void chooseEkranBoyutu() {
@@ -61,4 +56,6 @@ public class Kavisli_MonitorStep {
     public void getSuccessfullyMessageOdessey() {
         dc.findAndContainsText("messageOdessey","Odyssey G3");
     }
+
+
 }

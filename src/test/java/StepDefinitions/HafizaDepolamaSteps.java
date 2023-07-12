@@ -1,20 +1,43 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import io.cucumber.datatable.DataTable;
+import Utilites.GWD;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
+import java.time.Duration;
 
 public class HafizaDepolamaSteps {
 
     DialogContent dc = new DialogContent();
-    @And("Click on the element from Filter Type")
-    public void clickOnTheElementFromFilterType(DataTable elements) {
-        List<String> listElement = elements.asList(String.class);
+    WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
 
-        for (int i = 0; i < listElement.size(); i++) {
-            dc.findAndClick(listElement.get(i));
-        }
+    @And("Action to the IT from main menu and click on the Tumunu Gor")
+    public void actionToTheITFromMainMenuAndClickOnTheTumunuGor() {
+        dc.actionAndClick("IT");
+        dc.findAndClick("TumunuGor");
+    }
+
+
+    @And("Select SSD from Tip and TB from Kapasite")
+    public void selectSSDFromTipAndTBFromKapasite() {
+
+        dc.findAndClick("SSD");
+        dc.findAndClick("TB2");
+
+
+    }
+
+    @Then("Select one of the products and click the Nerden Alinir")
+    public void selectOneOfTheProductsAndClickTheNerdenAlinir() {
+        dc.findAndClick("product");
+        dc.findAndClick("nereden");
+    }
+
+    @And("Close both windows")
+    public void closeBothWindows() {
+        dc.findAndClick("close1");
+        dc.findAndClick("close2");
     }
 }
