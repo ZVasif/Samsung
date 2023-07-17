@@ -17,16 +17,14 @@ public class Kavisli_MonitorStep {
     public void actionToTheITFromMainMenuAndClickOnTheKavisliMonitör() {
         dc.actionAndClick("IT");
         dc.actionAndClick("kavisli");
-        System.out.println();
+
     }
 
 
     @Then("Choose Ekran Boyutu")
     public void chooseEkranBoyutu() {
-        //WebElement element=GWD.driver.findElement(By.xpath("//*[@for=\"checkbox-series04o04\"]"));
-        //wait.until(ExpectedConditions.elementToBeClickable(element));
-        GWD.Bekle(5);
-        dc.actionAndClick("inc");
+        dc.findAndClick("scroll");
+        dc.findAndClick("inc");
     }
 
     @And("Select Odessey monitor")
