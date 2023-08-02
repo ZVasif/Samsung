@@ -5,7 +5,7 @@ Feature: Kavisli Monitor function
     Given Get successfully message Samsung
     Then Close cookie window
     And Action to the IT from main menu and click on the Kavisli Monitör
-    Then Choose Ekran Boyutu
+    Then Choose inch from Ekran Boyutu and resolution from Görüntü Çözünürlüğü
     And Select Odessey monitor
     Then Click on the Destek
     And Go to Desteye Git

@@ -20,17 +20,18 @@ public class Kavisli_MonitorStep {
 
     }
 
-
-    @Then("Choose Ekran Boyutu")
-    public void chooseEkranBoyutu() {
-        dc.findAndClick("scroll");
+    @Then("Choose inch from Ekran Boyutu and resolution from Görüntü Çözünürlüğü")
+    public void chooseInchFromEkranBoyutuAndResolutionFromGörüntüÇözünürlüğü() {
+        dc.findAndClick("screenSize");
         dc.findAndClick("inc");
+        dc.findAndClick("resolution");
+        dc.findAndClick("HD");
     }
 
     @And("Select Odessey monitor")
     public void selectOdesseyMonitor() {
-        dc.actionAndClick("odessey");
-        dc.findAndContainsText("message27","27");
+        dc.findAndClick("odessey");
+        dc.findAndContainsText("messageInc","34");
     }
 
     @Then("Click on the Destek")
@@ -41,7 +42,6 @@ public class Kavisli_MonitorStep {
 
     @And("Go to Desteye Git")
     public void goToDesteyeGit() {
-        String firstW=GWD.getDriver().getWindowHandle();
         dc.actionAndClick("desteyeGit");
 
         Set<String >allW=GWD.getDriver().getWindowHandles();
@@ -52,8 +52,9 @@ public class Kavisli_MonitorStep {
 
     @And("Get successfully message Odessey")
     public void getSuccessfullyMessageOdessey() {
-        dc.findAndContainsText("messageOdessey","Odyssey G3");
+        dc.findAndContainsText("messageOdessey","Odyssey G");
     }
+
 
 
 }

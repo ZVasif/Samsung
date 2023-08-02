@@ -76,16 +76,20 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//*[contains(text(),'Kavisli Monitör')])[2]")
     private WebElement kavisli;
     @FindBy(xpath = "//*[text()='Ekran Boyutu']")
-    private  WebElement scroll;
+    private  WebElement screenSize;
     @FindBy(xpath = "//*[@for=\"checkbox-series04o04\"]")
     private WebElement inc;
-    @FindBy(xpath = "//*[contains(text(),'Odyssey G3 27” 1')]")
+    @FindBy(xpath = "//*[text()='Görüntü Çözünürlüğü']")
+    private WebElement resolution;
+    @FindBy(css = "[for=\"checkbox-series02z02\"]")
+    private WebElement HD;
+    @FindBy(xpath = "//*[contains(text(),'Odyssey G5 34')]")
     private WebElement odessey;
-    @FindBy(xpath = "(//*[@class='pd-option-selector__main-text'])[2]")
-    private WebElement message27;
+    @FindBy(xpath = "//*[@class='pd-option-selector__main-text']")
+    private WebElement messageInc;
     @FindBy(css = "[aria-label=\"Destek\"]")
     private WebElement destek;
-    @FindBy(xpath = "//*[@class='cta-wrap']/a")
+    @FindBy(xpath = "//*[contains(text(),'Daha Fazla ')]")
     private WebElement desteyeGit;
     @FindBy(css = "[class='support-product-hero__product-name']")
     private WebElement messageOdessey;
@@ -169,8 +173,11 @@ public class DialogContent extends Parent {
             case "goTo":myElement=goTo;break;
             case "delete":myElement=delete;break;
             //**************************  Kavisli Monitor  **************************//
-            case "scroll":myElement=scroll;break;
+            case "screenSize":myElement=screenSize;break;
             case "inc":myElement=inc;break;
+            case "resolution":myElement=resolution;break;
+            case "HD":myElement=HD;break;
+            case "odessey":myElement=odessey;break;
 
             case "gPlayStore":myElement=gPlayStore;break;
             case "aAppStore":myElement=aAppStore;break;
@@ -214,7 +221,7 @@ public class DialogContent extends Parent {
 
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
-            case "message27":myElement=message27;break;
+            case "messageInc":myElement=messageInc;break;
             case "messageOdessey":myElement=messageOdessey;break;
             case "assert1":myElement=assert1;break;
             case "verify1":myElement=verify1;break;
@@ -237,7 +244,6 @@ public class DialogContent extends Parent {
             case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
 
             case "kavisli":myElement=kavisli;break;
-            case "odessey":myElement=odessey;break;
             case "desteyeGit":myElement=desteyeGit;break;
         }
         actionFunction(myElement);
