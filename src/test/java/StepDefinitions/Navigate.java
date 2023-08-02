@@ -33,16 +33,10 @@ public class Navigate  {
     public void closeCookieWindow() {
         dc.findAndClick("cookie");
     }
-
-    @And("Click on the Ekranlar from main menu")
-    public void clickOnTheEkranlarFromMainMenu() {
+    @And("Action to the IT from main menu and click on the Monitörleri Keşfedin")
+    public void actionToTheITFromMainMenuAndClickOnTheMonitörleriKeşfedin() {
+        dc.actionAndClick("IT");
         dc.findAndClick("ekranlar");
-    }
-
-    @And("Click on the Monitör and Monitörleri Keşfedin")
-    public void clickOnTheMonitörAndMonitörleriKeşfedin() {
-        dc.actionAndClick("monitor");
-        dc.actionAndClick("mKesfedin");
     }
 
     @Then("Click on the monitor Ultra Genis")
@@ -61,12 +55,13 @@ public class Navigate  {
         WebElement element=GWD.getDriver().findElement(By.xpath("(//div[@role=\"tablist\"]/button)[2]"));
 
         wait.until(ExpectedConditions.attributeContains(element,"aria-selected","true"));
-        dc.actionAndClick("monitor2");
+        dc.actionAndClick("monitor");
     }
 
     @And("Get successfully message")
     public void getSuccessfullyMessage() {
         dc.findAndContainsText("message34","34");
     }
+
 
 }

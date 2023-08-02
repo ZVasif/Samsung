@@ -21,11 +21,11 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//*[@data-index=\"4\"]")
             private WebElement IT;
     @FindBy(xpath = "//*[@an-la=\"it:monitors:discover monitors\"]")
-            private WebElement mKesfedin;
+    private WebElement ekranlar;
     @FindBy(xpath = "(//div[contains(@class,'product-name-text-inner')]/span)[9]")
     private WebElement ultraGenis;
     @FindBy(xpath = "//*[contains(@aria-label,'Odyssey G5 34')]")
-            private WebElement monitor2;
+            private WebElement monitor;
     @FindBy(className = "pd-option-selector__main-text")
             private WebElement message34;
 
@@ -163,6 +163,7 @@ public class DialogContent extends Parent {
             //**************************  Common  **************************//
             case "cookie":myElement=cookie;break;
             //**************************  Navigate  **************************//
+            case "ekranlar":myElement=ekranlar;break;
             case "ultraGenis":myElement=ultraGenis;break;
             //**************************  Aksesuarlar  **************************//
             case "aksesuarlar":myElement=aksesuarlar;break;
@@ -178,6 +179,7 @@ public class DialogContent extends Parent {
             case "resolution":myElement=resolution;break;
             case "HD":myElement=HD;break;
             case "odessey":myElement=odessey;break;
+            case "destek":myElement=destek;break;
 
             case "gPlayStore":myElement=gPlayStore;break;
             case "aAppStore":myElement=aAppStore;break;
@@ -218,11 +220,13 @@ public class DialogContent extends Parent {
             case "message34":myElement=message34;break;
             //**************************  Aksesuarlar  **************************//
             case "messageEmpty":myElement=messageEmpty;break;
+            //**************************  Kavisli  **************************//
+            case "messageInc":myElement=messageInc;break;
+            case "messageOdessey":myElement=messageOdessey;break;
 
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
-            case "messageInc":myElement=messageInc;break;
-            case "messageOdessey":myElement=messageOdessey;break;
+
             case "assert1":myElement=assert1;break;
             case "verify1":myElement=verify1;break;
 
@@ -234,17 +238,18 @@ public class DialogContent extends Parent {
 
     public void actionAndClick (String strElement){
         switch (strElement){
-            //**************************  Navigate  **************************//
+            //**************************  Common  **************************//
             case "IT":myElement=IT;break;
-            case "mKesfedin":myElement = mKesfedin;break;
-            case "monitor2":myElement = monitor2;break;
+            //**************************  Navigate  **************************//
+            case "monitor":myElement = monitor;break;
+            //**************************  Kavisli  **************************//
+            case "kavisli":myElement=kavisli;break;
+            case "desteyeGit":myElement=desteyeGit;break;
 
 
             case "smartThingsTitle":myElement = smartThingsTitle;break;
             case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
 
-            case "kavisli":myElement=kavisli;break;
-            case "desteyeGit":myElement=desteyeGit;break;
         }
         actionFunction(myElement);
     }

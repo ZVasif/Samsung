@@ -11,7 +11,6 @@ import java.util.Set;
 
 public class Kavisli_MonitorStep {
     DialogContent dc=new DialogContent();
-    WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
 
     @And("Action to the IT from main menu and click on the Kavisli Monitör")
     public void actionToTheITFromMainMenuAndClickOnTheKavisliMonitör() {
