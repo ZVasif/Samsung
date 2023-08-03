@@ -19,13 +19,12 @@ public class WarrantyPeriodCheckSteps {
 
     @Given("Go to Samsung support page")
     public void goToSamsungSupportPage() {
-        dc.findAndClick("destekBtn");
+        dc.actionAndClick("destekBtn");
     }
 
     @And("Click on LEARN MORE to see warranty terms")
     public void clickOnLEARNMOREToSeeWarrantyTerms() {
-//        dc.findAndClick("garantiDahaFazlaBtn");
-        wait.until(ExpectedConditions.visibilityOf(dc.getMyElement("garantiDahaFazlaBtn"))).click();
+        dc.findAndClick("garantiDahaFazlaBtn");
     }
 
     List<WebElement> urunisim;

@@ -30,9 +30,9 @@ public class DialogContent extends Parent {
             private WebElement message34;
 
     //**************************  Smart Things  **************************//
-    @FindBy(xpath = "(//span[text()='SmartThings'])[1]")
+    @FindBy(xpath = "(//*[contains(text(),'SmartThings')])[2]")
             private WebElement smartThingsTitle;
-    @FindBy(xpath = "(//div[2]/ul/li[3]/a/span)[7]")
+    @FindBy(xpath = "//*[text()='Uygulama']")
             private WebElement appsAndProductsTitle;
 
     @FindBy(xpath = "//div[2]/div[@class='st-feature-benefit__cta-wrap']/a[1]")
@@ -113,9 +113,9 @@ public class DialogContent extends Parent {
     public WebElement verify1;
 
     //***************  Warranty Period  *****************//
-    @FindBy(xpath = "(//a[text()='Destek'])[2]")
+    @FindBy(css = "[an-la=\"support\"]")
     private WebElement destekBtn;
-    @FindBy(xpath = "(//a[@aria-label='DAHA FAZLA BİLGİ EDİN'])[1]")
+    @FindBy(xpath = "(//*[contains(text(),'Garanti Bilgileri')])[2]")
     private WebElement garantiDahaFazlaBtn;
     @FindBy(xpath = "(//ul[@class='warranty-card-info__tab-list']/li)[1]")
     private WebElement mobilCihazBtn;
@@ -180,11 +180,12 @@ public class DialogContent extends Parent {
             case "HD":myElement=HD;break;
             case "odessey":myElement=odessey;break;
             case "destek":myElement=destek;break;
-
+            //**************************  Smart Things  **************************//
             case "gPlayStore":myElement=gPlayStore;break;
             case "aAppStore":myElement=aAppStore;break;
+
             case "close":myElement=close;break;
-            case "destekBtn":myElement=destekBtn;break;
+            //case "destekBtn":myElement=destekBtn;break;
             case "garantiDahaFazlaBtn":myElement=garantiDahaFazlaBtn;break;
             case "mobilCihazBtn":myElement=mobilCihazBtn;break;
             case "tvVeAydinlatmaBtn":myElement=tvVeAydinlatmaBtn;break;
@@ -223,7 +224,7 @@ public class DialogContent extends Parent {
             //**************************  Kavisli  **************************//
             case "messageInc":myElement=messageInc;break;
             case "messageOdessey":myElement=messageOdessey;break;
-
+            //**************************  Smart Things  **************************//
             case "verifyPlayStore":myElement=verifyPlayStore;break;
             case "verifyAppStore":myElement=verifyAppStore;break;
 
@@ -245,10 +246,12 @@ public class DialogContent extends Parent {
             //**************************  Kavisli  **************************//
             case "kavisli":myElement=kavisli;break;
             case "desteyeGit":myElement=desteyeGit;break;
-
-
+            //************************** Smart Things **************************//
             case "smartThingsTitle":myElement = smartThingsTitle;break;
             case "appsAndProductsTitle":myElement = appsAndProductsTitle;break;
+            //************************** Warranty Period **************************//
+            case "destekBtn":myElement=destekBtn;break;
+
 
         }
         actionFunction(myElement);
